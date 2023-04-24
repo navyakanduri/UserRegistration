@@ -1,0 +1,36 @@
+﻿@model UserRegistration.Models.Login
+@{
+	ViewData["Title"] = "Sign Up";
+}
+<div class="container">
+	<div class="row mt-lg-5">
+		<div class="col-4 offset-3 border border-primary rounded pl-5 pr-5 pb-5">
+			<div class="text-center">
+				<a class="text-light btn btn-primary font-weight-bold" asp-action="SignUp" asp-controller="Registration">Sign Up</a>
+			</div>
+			<h6 class="text-success text-center">@TempData["sucessMessage"]</h6>
+			<form method="post" asp-action="Login">
+				<div class="form-group">
+					<label asp-for="UserName"></label>
+					<input type="text" asp-for="UserName" placeholder="Enter Username" class="form-control" autocomplete="off"/>
+					<span class="text-danger">@TempData["errorUsername"]</span>
+				</div>
+				<br />
+				<div class="form-group">
+					<label asp-for="Password"></label>
+					<input type="password" asp-for="Password" placeholder="Enter password" class="form-control" autocomplete="off" />
+					<span class="text-danger">@TempData["errorPassword"]</span>
+				</div>
+				<br />
+				<div class="form-group">
+					<input type="submit" class="btn btn-primary mb-2" value="Log In"/>
+				</div>
+
+
+			</form>
+
+		</div>
+
+	</div>
+
+</div>
